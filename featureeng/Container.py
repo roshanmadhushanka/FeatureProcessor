@@ -4,8 +4,13 @@ from featureeng.parser import Text
 
 
 class Frame:
-    def __init__(self, panda_frame):
-        self._pd_frame = panda_frame
+    def __init__(self, data):
+        if isinstance(data, str):
+            # File path
+            self._pd_frame = pd.read_csv(data)
+        elif isinstance(data, pd.core.frame.DataFrame):
+            # Panda frame
+            self._pd_frame = data
 
     def get_panda_frame(self):
         '''
