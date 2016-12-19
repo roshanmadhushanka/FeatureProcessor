@@ -329,10 +329,61 @@ Anomaly removing methods
     mean = mean of data
     if abs(x - mean) > 3 * std then x is an outlier
 
-example :
+dataset :
+```
+      test
+0    1.000
+1    1.200
+2    1.200
+3    3.400
+4    1.200
+5    0.990
+6    1.020
+7   10.500
+8    5.600
+9    1.210
+10   0.980
+11   1.000
+12   1.200
+13   1.000
+14   1.100
+15   1.012
+16   1.210
+17   9.000
+18   1.200
+19   0.900
 ```
 
+example :
 ```
+from featureeng.math import Filter
+
+df = pd.read_csv('test.csv')
+df = Filter.filterData(panda_frame=df, columns=['test'], removal_method='threesigma', threshold=3)
+```
+
+after :
+```
+     test
+0   1.000
+1   1.200
+2   1.200
+4   1.200
+5   0.990
+6   1.020
+9   1.210
+10  0.980
+11  1.000
+12  1.200
+13  1.000
+14  1.100
+15  1.012
+16  1.210
+18  1.200
+19  0.900
+```
+
+7th and 17th indexes have been removed from the data set.
 
 #### 2. IQR
     IQR Rule
