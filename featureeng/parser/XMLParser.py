@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 from featureeng.Container import Frame
+import pandas as pd
 
 # features
 MOVING_AVERAGE = 'moving_average'
@@ -20,8 +21,9 @@ K_CLOSEST = 'k_closest'
 NO_OF_BINS = 'no_of_bins'
 
 
-def apply_feature_eng(pandas_frame, xml_file):
-    frame = Frame(pandas_frame)
+def apply_feature_eng(frame, xml_file):
+    if isinstance(frame, pd.core.frame.DataFrame):
+        frame = Frame(frame)
     tree = ET.parse(xml_file)
     root = tree.getroot()
 

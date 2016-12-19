@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<flow>
+    <moving_average window="5">
+        <feature>test</feature>
+    </moving_average>
+    <moving_standard_deviation window="5">
+        <feature>test</feature>
+    </moving_standard_deviation>
+</flow>
