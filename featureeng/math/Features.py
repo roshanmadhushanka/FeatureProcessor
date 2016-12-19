@@ -190,6 +190,33 @@ def moving_standard_deviation(series, window=5, default=False):
         return ret
 
 
+def moving_variance(series, window=5, default=False):
+    '''
+            Calculate variance within a moving window
+
+            :param series: Number series to compute
+            :param window: Selected time window
+            :param default: True -> Replace initial values inside the time window to zero
+                            Fale -> Neglect and continue
+            :return: calculated result in numpy array
+            '''
+
+    # Convert pandas.series to list
+    series = list(series)
+
+    size = len(series)
+    ret = np.zeros(shape=size - window + 1)
+    for i in range(size - window + 1):
+        subset = series[i:i + window]
+        ret[i] = np.var(subset, dtype=float)
+
+    # Add default values for initial window
+    if (default):
+        return np.concatenate((np.zeros(shape=window - 1), ret), axis=0)
+    else:
+        return ret
+
+
 def moving_entropy(series, window=10, no_of_bins=5, default=False):
     '''
         Calculate entropy sum within a moving window

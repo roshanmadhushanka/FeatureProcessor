@@ -249,6 +249,25 @@ class Frame:
         full_series[row_range[0]: row_range[1]] = result
         self.add_column(column_name=dest_column, series=full_series)
 
+    def apply_moving_var(self, input_column, dest_column=None, row_range=(0, None), window=5):
+        '''
+                Add moving variance as another column
+
+                :param input_column: Required column to add feature engineering
+                :param row_range: Range of rows that need to modify
+                :param window: Window size of the calculation takes part
+                :param dest_column: Destination column name
+                :return: None
+                '''
+        if dest_column == None:
+            dest_column = input_column + '_var_' + str(window)
+
+        full_series = list(self._pd_frame[input_column])
+        filtered_series = full_series[row_range[0]:row_range[1]]
+        result = Features.moving_variance(series=filtered_series, window=window, default=True)
+        full_series[row_range[0]: row_range[1]] = result
+        self.add_column(column_name=dest_column, series=full_series)
+
     def apply_moving_probability(self, input_column, dest_column=None, row_range=(0, None), window=10, no_of_bins=5):
         '''
         Apply moving probability as another columnn

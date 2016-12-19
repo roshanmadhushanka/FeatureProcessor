@@ -10,6 +10,7 @@ MOVING_MEDIAN = 'moving_median'
 MOVING_STANDARD_DEVIATION = 'moving_standard_deviation'
 MOVING_ENTROPY = 'moving_entropy'
 MOVING_PROBABILITY = 'moving_probability'
+MOVING_VARIANCE = 'moving_variance'
 
 # attributes
 WINDOW = 'window'
@@ -77,5 +78,11 @@ def apply_feature_eng(pandas_frame, xml_file):
             for column in feature:
                 column = str(column.text)
                 frame.apply_moving_entropy(input_column=column, window=window, no_of_bins=no_of_bins)
+
+        elif feature.tag == MOVING_VARIANCE:
+            window = int(feature.get(WINDOW))
+            for column in feature:
+                column = str(column.text)
+                frame.apply_moving_var(input_column=column, window=window)
 
     return frame.get_panda_frame()
