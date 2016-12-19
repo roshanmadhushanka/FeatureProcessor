@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aadc7933-695e-41ae-bfb3-56b6f1ec8e26" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/__init__.py" afterPath="$PROJECT_DIR$/resources/test1.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/Test.py" afterPath="$PROJECT_DIR$/resources/Test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -110,8 +108,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="134">
-                <caret line="361" column="98" selection-start-line="361" selection-start-column="98" selection-end-line="361" selection-end-column="98" />
+              <first_editor relative-caret-position="598">
+                <caret line="398" column="76" selection-start-line="398" selection-start-column="76" selection-end-line="398" selection-end-column="76" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -613,7 +611,14 @@
       <option name="project" value="LOCAL" />
       <updated>1482140198155</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Readme">
+      <created>1482142157362</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1482142157362</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -927,8 +932,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="134">
-            <caret line="361" column="98" selection-start-line="361" selection-start-column="98" selection-end-line="361" selection-end-column="98" />
+          <first_editor relative-caret-position="598">
+            <caret line="398" column="76" selection-start-line="398" selection-start-column="76" selection-end-line="398" selection-end-column="76" />
             <folding />
           </first_editor>
           <second_editor />

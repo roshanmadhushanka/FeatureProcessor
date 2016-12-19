@@ -394,6 +394,11 @@ after :
     if abs(x-Q75) > 1.5 * IQR : A mild outlier
     if abs(x-Q75) > 3.0 * IQR : An extreme outlier
 
+example :
+```
+df = Filter.filterData(panda_frame=df, columns=['test'], removal_method='iqr', threshold=3)
+```
+
 #### 3. Autoencoder
 Based on the reconstruction error anomalies can be detected. Reconstruction error greater than particulat threshold can be defined as an outlier
 
