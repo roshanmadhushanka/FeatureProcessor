@@ -290,8 +290,77 @@ result :
 18  6.338                    6.7268
 ```
 
+### XML Parser
+XML parser is a method of doing feature engineering without much coding. This can also help to save the feature engineering processes that have been done by you for future applications.
+
+flow.xml file
+```
+<?xml version="1.0"?>
+<flow>
+    <moving_average window="5">
+        <feature>test</feature>
+    </moving_average>
+    <moving_standard_deviation window="5">
+        <feature>test</feature>
+    </moving_standard_deviation>
+</flow>
+```
+example :
+```
+from featureeng.parser import XMLParser
+
+data_frame = Frame('test.csv')
+XMLParser.apply_feature_eng(frame=data_frame, xml_file='flow')
+```
+
+### Filters
+Anomaly removing methods
+
+1. Three Sigma
+2. IQR
+3. Autoencoder
+4. Percentile Based
+
+#### 1.Three Sigma
+
+    Three Sigma Rule
+    ----------------
+    std  = standard deviation of data
+    mean = mean of data
+    if abs(x - mean) > 3 * std then x is an outlier
+
+example :
+```
+
+```
+
+#### 2. IQR
+    IQR Rule
+    ----------------
+    Q25 = 25 th percentile
+    Q75 = 75 th percentile
+    IQR = Q75 - Q25 Inner quartile range
+    if abs(x-Q75) > 1.5 * IQR : A mild outlier
+    if abs(x-Q75) > 3.0 * IQR : An extreme outlier
+
+#### 3. Autoencoder
+Based on the reconstruction error anomalies can be detected. Reconstruction error greater than particulat threshold can be defined as an outlier
+
+#### 4. Percentile Based
+Data not lying between defined lower and upper percentiles can be identified as outliers
+
+### Measures
+1. Correlation
+2. Variance
+
+#### 1. Correlation
+Correlation helps to identify the relations between columns. If two columns are highly correlated, then one column can be dropped.
+
+#### 2. Variance
+Columns which have lesser variance could have lesser importance towards the outcome.
+
 ### Charts
-Only for numerical visualization.
+Only for numerical visualizations.
 
 example :
 ```
@@ -305,4 +374,6 @@ data_frame.apply_moving_std(input_column='test', dest_column='test_moving_std', 
 Chart.presentData(data_frame=data_frame, columns=['test', 'test_moving_avg'])
 ```
 ![ ](https://github.com/roshanmadhushanka/FeatureProcessor/blob/master/resources/figure.png  "Chart")
+
+
 
