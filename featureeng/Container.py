@@ -254,7 +254,7 @@ class Frame:
         full_series[row_range[0]: row_range[1]] = result
         self.add_column(column_name=dest_column, series=full_series)
 
-    def apply_moving_var(self, input_column, dest_column=None, row_range=(0, None), window=5):
+    def apply_moving_variance(self, input_column, dest_column=None, row_range=(0, None), window=5):
         '''
                 Add moving variance as another column
 

@@ -83,6 +83,6 @@ def apply_feature_eng(pandas_frame, xml_file):
             window = int(feature.get(WINDOW))
             for column in feature:
                 column = str(column.text)
-                frame.apply_moving_var(input_column=column, window=window)
+                frame.apply_moving_variance(input_column=column, window=window)
 
     return frame.get_panda_frame()
