@@ -6,5 +6,5 @@ data = [1.0, 1.2, 1.2, 3.4, 1.2, 0.99, 1.02, 10.5, 5.6, 1.21, 0.98, 1.0, 1.2, 1.
 threesigma_filter = Filter.threeSigma(series=data, threshold=2)
 
 print df
-df = Filter.filterData(panda_frame=df, columns=['test'], removal_method='threesigma', threshold=3)
+df = Filter.filterDataPercentile(panda_frame=df, columns=['test'], lower_percentile=0.1, upper_percentile=0.9, column_err_threshold=1)
 print df

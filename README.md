@@ -405,6 +405,11 @@ Based on the reconstruction error anomalies can be detected. Reconstruction erro
 #### 4. Percentile Based
 Data not lying between defined lower and upper percentiles can be identified as outliers
 
+example :
+```
+df = Filter.filterDataPercentile(panda_frame=df, columns=['test'], lower_percentile=0.1, upper_percentile=0.9, column_err_threshold=1)
+```
+
 ### Measures
 1. Correlation
 2. Variance
